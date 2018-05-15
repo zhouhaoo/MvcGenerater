@@ -1,8 +1,0 @@
-#set($contextPath=$link.getContextPath())
-## ....
-
-<script type="text/javascript">
-
-    mini.parse();
-
-</script>
