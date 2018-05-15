@@ -1,0 +1,43 @@
+<idea-plugin>
+  <id>com.zhouhaoh.mvcmarker.action.MvcGeneraterAction</id>
+  <name>MvcGenerater</name>
+  <version>1.0.1</version>
+  <vendor email="zhouhao0912@gmail.com" url="http://www.zhouhaoh.com">Mvc Generater</vendor>
+
+  <description><![CDATA[
+      Generater the basic controller,Service,and velocity file.<br>
+      <em>code</em>
+    ]]></description>
+
+  <change-notes><![CDATA[
+      生成单表mvc功能模板代码<br>
+      <em>controller,Service,and velocity file.</em>
+    ]]>
+  </change-notes>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+  <idea-version since-build="171.0"/>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+       on how to target different products -->
+  <!-- uncomment to enable plugin in all products
+  <depends>com.intellij.modules.lang</depends>
+  -->
+
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+  </extensions>
+
+  <actions>
+    <!--菜单弹出-->
+    <action id="com.zhouhaoh.MvcGenerater" class="com.zhouhaoh.mvcmarker.action.MvcGeneraterAction"
+            text="MvcGenerater"
+            description="Generater the basic controller,Service,and velocity file.">
+      <add-to-group group-id="ProjectViewPopupMenu" anchor="after"
+                    relative-to-action="WeighingNewGroup"/>
+      <keyboard-shortcut keymap="$default" first-keystroke="meta alt G"
+                         second-keystroke="ctrl alt G"/>
+    </action>
+  </actions>
+
+</idea-plugin>

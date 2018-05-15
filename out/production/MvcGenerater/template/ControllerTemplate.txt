@@ -1,0 +1,36 @@
+package $basepackage.mvc.$funcPackage;
+
+import $basepackage.domain.$mapperpackage.$DomainDto;
+import $basepackage.service.$funcPackage.$DomainDtoService;
+import $basepackage.webutil.BaseController;
+import com.itl.service.dto.PageListDto;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+/**
+ * @author $author
+ * @date $date.
+ */
+@Controller
+@RequestMapping("$controllerMapping")
+public class $DomainDtoController extends BaseController {
+
+    @Autowired
+    private $DomainDtoService $domainDtoService;
+
+    @ResponseBody
+    @RequestMapping("fetchlist")
+    public PageListDto<$DomainDto> fetchList($DomainDto $domainDto) {
+        try {
+            initPreciseQuery($domainDto);
+            PageListDto<$DomainDto> listDto = $domainDtoService.selectByExampleWithRowbounds($domainDto, getPageBounds(), getOrderByClause());
+            return listDto;
+        } catch (Exception e) {
+            return null;
+        }
+    }
+
+}
