@@ -1,1 +1,1 @@
-## IDEA mcv模板生成插件
+## IDEA mvc模板生成插件
